@@ -1,0 +1,15 @@
+##best model
+
+import joblib
+
+# Load Model
+loaded_model = joblib.load('tesla_stock_prediction_model.pkl')
+
+# Predict
+prediction = loaded_model.predict(X_test[:5])
+
+print("Predicted Values:")
+print(prediction)
+
+print("Actual Values:")
+print(y_test[:5])
