@@ -4,7 +4,7 @@ import numpy as np
 
 st.title("Tesla Stock Price Prediction")
 
-model = joblib.load("tesla_stock_prediction_model.pkl")
+model = joblib.load("model/tesla_stock_model.pkl")
 
 st.write("Enter stock values")
 
