@@ -1,4 +1,3 @@
-
 import streamlit as st
 import joblib
 import numpy as np
@@ -21,6 +20,13 @@ st.write(
 model = joblib.load("tesla_stock_prediction_model.pkl")
 
 st.write("Enter stock values below:")
+
+# Input fields
+open_price = st.number_input("Open Price", value=300.0)
+high_price = st.number_input("High Price", value=305.0)
+low_price = st.number_input("Low Price", value=295.0)
+volume = st.number_input("Volume", value=50000000.0)
+
 if st.button("Predict Closing Price"):
 
     features = np.array([[
