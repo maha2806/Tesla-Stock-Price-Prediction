@@ -1,16 +1,26 @@
+
 import streamlit as st
 import joblib
 import numpy as np
 
 st.title("Tesla Stock Price Prediction")
 
+st.markdown("""
+### Project Overview
+This machine learning application predicts Tesla's stock closing price based on historical market indicators.
+
+**Model Used:** Linear Regression  
+**Features Used:** Open Price, High Price, Low Price, and Volume  
+**Dataset Source:** Yahoo Finance Historical Tesla Stock Data
+""")
+
+st.write(
+    "This application predicts Tesla stock closing prices using a Linear Regression model trained on historical stock data."
+)
+
 model = joblib.load("tesla_stock_prediction_model.pkl")
 
-open_price = st.number_input("Open Price")
-high_price = st.number_input("High Price")
-low_price = st.number_input("Low Price")
-volume = st.number_input("Volume")
-
+st.write("Enter stock values below:")
 if st.button("Predict Closing Price"):
 
     features = np.array([[
